@@ -1,0 +1,16 @@
+{
+    // базовая конфигурация для eslint
+    "parser": "babel-eslint",
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true
+    },  // обозначит, где код будет использоваться
+    "rules": { // описываем свои  правила для проекта
+        "semi": "off",
+        "arrow-parents": "off",
+        "comma-dangle": "off",
+        "require-jsdoc": "off"
+    }, 
+    "extends": ["eslint:recommended", "google"]
+}

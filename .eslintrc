@@ -10,7 +10,8 @@
         "semi": "off",
         "arrow-parents": "off",
         "comma-dangle": "off",
-        "require-jsdoc": "off"
+        "require-jsdoc": "off",
+        "linebreak-style": ["error, windows"]
     }, 
     "extends": ["eslint:recommended", "google"]
 }

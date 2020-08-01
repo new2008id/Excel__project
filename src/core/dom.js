@@ -50,6 +50,38 @@ class Dom {
         return this
 
     }
+
+    get data() { // появляется getter для инстанса класса DOM, который возвращает объект dataset
+        return this.$el.dataset
+    }
+
+    closest(selector) {
+        return $(this.$el.closest(selector)) // возвращает сам нативный элемент, но нам нужен инстанс класса DOM
+    }
+
+    getCoords() { // метод обращается к нативному элементу и вызывает метод getBoundingClientRect()
+        return this.$el.getBoundingClientRect() // метод позволяет получить набор координат
+    }
+
+    findAll(selector) {
+        return this.$el.querySelectorAll(selector)
+    }
+
+    css(styles = {}) {
+        // for (const key in styles)
+        //     if (styles.hasOwnProperty(key)) {
+        //         console.log(key);
+        //         console.log(styles[key]);
+        //     }
+        Object
+            .keys(styles)
+            .forEach(key => {
+                this.$el.style[key] = styles[key]
+                // console.log(key);
+                // console.log(styles[key]);
+            }) // вывели массив строчек и получили по нему итерацию
+        
+    }
 }
 
 // $('div').html('<h1>Test</h1>').clear() // chain js

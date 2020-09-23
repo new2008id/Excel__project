@@ -47,7 +47,7 @@ export function resizeHandler($root, event) {
             $parent.css({
                 width: value + 'px'
             })
-            this.$root.findAll(`[data-col="${$parent.data.col}"]`)
+            $root.findAll(`[data-col="${$parent.data.col}"]`)
                 .forEach(el => el.style.width = value + 'px')
         } else {
             $parent.css({

@@ -6,6 +6,13 @@ export class Header extends ExcelComponent {
     // позволит сделать полезную работу
     // Будет идти корневым классом для блока
 
+    constructor($root, options) {
+        super($root, {
+            name: 'Header',
+            ...options
+        })
+    }
+
     toHTML() {
         return `
             <input type="text" class="input" value="Новая таблица" />

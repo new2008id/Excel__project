@@ -19,6 +19,18 @@ class Dom {
         return this.$el.outerHTML.trim() // trim - удаляет лишние пробелы в начале и в конце 
     }
 
+    text(text) {
+        if (typeof text === 'string') {
+            this.$el.textContent = text
+            return this
+        }
+        if (this.$el.tagName.toLowerCase() === 'input') {
+            this.$el.value.trim()
+        }
+        return this.$el.textContent.trim()
+    }   
+
+
     clear() {
         this.html('')
         return this
@@ -33,6 +45,9 @@ class Dom {
         this.$el.removeEventListener(eventType, callback)
     }
 
+    find(selector) { // находит одну ячейку
+        return $(this.$el.querySelector(selector))
+    }
     // node - Element is JS 
     append(node) { // сюда append какую-то ноду
         console.log(node);
@@ -81,6 +96,32 @@ class Dom {
                 // console.log(styles[key]);
             }) // вывели массив строчек и получили по нему итерацию
         
+    }
+
+    id(parse) {
+        if (parse) { // по умолчанию null и в if компилятор не зайдет
+            const parsed = this.id().split(':')
+            return {
+                row: +parsed[0],
+                col: +parsed[1]
+            }
+        }
+        return this.data.id
+    }
+
+    focus() {
+        this.$el.focus()
+        return this
+    }
+
+    addClass(className) {
+        this.$el.classList.add(className)
+        return this
+    }
+    
+    removeClass(className) {
+        this.$el.classList.remove(className)
+        return this
     }
 }
 

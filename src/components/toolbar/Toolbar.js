@@ -6,10 +6,10 @@ export class Toolbar extends ExcelComponent {
     // позволит сделать полезную работу
     // Будет идти корневым классом для блока
 
-    constructor($root) {
+    constructor($root, options) {
         super($root, {
             name: 'Toolbar',
-            listeners: ['click']
+            ...options
         })
     }
 
@@ -36,8 +36,5 @@ export class Toolbar extends ExcelComponent {
         `
     }
 
-    onClick(event) {
-        console.log(event.target);
-        
-    }
+    
 }

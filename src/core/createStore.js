@@ -10,7 +10,7 @@ export function createStore(rootReducer, initialState = {}) { // реализу�
             listeners.push(fn)
             return {
                 unsubscribe() {
-                    listeners = listeners.filter(l = l !== fn) 
+                    listeners = listeners.filter(l => l !== fn) 
                     // будет вызываться функция тогда, когда нужно отписаться
                 }
             }

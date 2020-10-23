@@ -19,6 +19,11 @@ class Dom {
         return this.$el.outerHTML.trim() // trim - удаляет лишние пробелы в начале и в конце 
     }
 
+    clear() {
+        this.html('')
+        return this
+    }
+
     text(text) {
         if (typeof text !== 'undefined') {
             this.$el.textContent = text
@@ -29,12 +34,6 @@ class Dom {
         }
         return this.$el.textContent.trim()
     }   
-
-
-    clear() {
-        this.html('')
-        return this
-    }
 
     on(eventType, callback) {
         // this.$$listeners[eventType] = callaback // это объект и не должен быть заново инициализирован, просто добавляет к нему ключ

@@ -6,7 +6,8 @@ import {
     CHANGE_STYLES, 
     TABLE_RESIZE, 
     APPLY_STYLE, 
-    CHANGE_TITLE
+    CHANGE_TITLE,
+    UPDATE_DATE
 } from './types'
 
 export function tableResize(data) {
@@ -22,6 +23,13 @@ export function changeText(data) {
         data
     }
 } 
+
+export function updateDate() {
+    return {
+        // eslint-disable-next-line no-undef
+        type: UPDATE_DATE   
+    }
+}
 
 export function changeStyles(data) {
     return {

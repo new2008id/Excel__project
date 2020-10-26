@@ -4,7 +4,8 @@
     "env": {
         "es6": true,
         "browser": true,
-        "node": true
+        "node": true,
+        "jest/globals": true 
     },  // обозначит, где код будет использоваться
     "rules": { // описываем свои  правила для проекта
         "semi": "off",
@@ -14,5 +15,6 @@
         "linebreak-style": ["error, windows"],
         "operator-linebreak": "off"
     }, 
+    "plugins": ["jest"],
     "extends": ["eslint:recommended", "google"]
 }

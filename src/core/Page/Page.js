@@ -2,7 +2,7 @@
 
 export class Page {
     constructor(params) {
-        this.params = params // в дальнейшем потребуется для какого-либо Excel
+        this.params = params || Date.now().toString() // в дальнейшем потребуется для какого-либо Excel
     }
 
     getRoot() { // возвращает корневой элемент, который можно за append в nody
